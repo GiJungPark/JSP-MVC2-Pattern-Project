@@ -1,0 +1,343 @@
+@charset "EUC-KR";
+
+html, body{
+	height : 100%;
+	margin : 0;
+	padding: 0;
+}
+
+#wrap {
+	min-height: 100vh;
+	position: relative;
+	width: 100%;
+}
+
+.header {
+  height : 120px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #000000;
+}
+
+.header_logo img{
+	height : 85px;
+	vertical-align: middle;
+}
+
+.header::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.header_user{
+  position: absolute;
+  right: 0;
+  top: 15%;	
+}
+
+.header_user li {
+  float: left;
+  margin: 10px 22px 0 0;
+}
+
+.header_user img {
+	height : 30px;
+	width : 30px;
+}
+
+.navigator {
+	width : 100%;
+	height : 50px;
+	background-color: #333333;
+}
+
+.navigator ul{
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+.navigator ul li {
+	color : white;
+	background-color: #333333;
+	float : left;
+	line-height: 50px;
+	vertical-align: middle;
+	text-align: center;
+	position: relative;
+}
+
+.menuLink, .submenuLink{
+	text-decoration: none;
+	display: block;
+	width: 150px;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.menuLink {
+	color : white;
+}
+
+.navMenuLi:hover .menuLink {
+	background-color: #666666;
+}
+
+.submenuLink {
+	color : white;
+	background-color: #454545;
+	border :solid 1px black;
+	margin-top: -1px;
+}
+
+.subMenu{
+	position: absolute;
+	height: 0px;
+	overflow: hidden;
+	transition : height .2s;
+}
+
+.navMenuLi:hover .subMenu{
+	height:150px;
+}
+
+.submenuLink:hover{
+	background-color: #555555;
+}
+
+.footer {
+	width : 100%;
+	height: 110px;
+	bottom : 0px;
+	position: absolute;
+	background-color: #000000;
+	color:white;
+}
+
+.mainContent{
+	text-align: center;
+}
+
+#main_title{
+	font-weight: bold;
+	display: inline-block;
+	margin-bottom: 0;
+}
+
+#main_title_hr{
+	width:200px;
+}
+
+
+.gallery {
+  background: #EEE;
+}
+
+#slider {
+  margin: 0 auto;
+  width: 800px;
+  max-width: 100%;
+  text-align: center;
+}
+
+#slider input[type=radio] {
+  display: none;
+}
+
+#slider label {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#slides {
+  padding: 10px;
+  border: 3px solid #ccc;
+  background: #fff;
+  position: relative;
+  z-index: 1;
+}
+#overflow {
+  width: 100%;
+  overflow: hidden;
+}
+
+#slide1:checked ~ #slides .inner{
+  margin-left: 0;
+}
+#slide2:checked ~ #slides .inner{
+  margin-left: -100%;
+}
+#slide3:checked ~ #slides .inner{
+  margin-left: -200%;
+}
+#slide4:checked ~ #slides .inner{
+  margin-left: -300%;
+}
+#slide5:checked ~ #slides .inner{
+  margin-left: -400%;
+}
+
+#slides .inner {
+  transition: margin-left 800ms cubic-bezier(0.0770, 0.000, 0.175, 1.000);
+  width: 500%;
+  line-height: 0;
+  height: 200px;
+} 
+
+#slides .slide {
+  width: 20%; 
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #fff;
+}
+
+#slides .slide_1{
+  background: red;
+}
+#slides .slide_2{
+  background: orange;
+}
+#slides .slide_3{
+  background: yellow;
+}
+#slides .slide_4{
+  background: green;
+}
+#slides .slide_5{
+  background: blue;
+}
+
+.slide-content {
+  padding: 10px;
+}
+
+#controls {
+  margin: -130px 0 0 0;
+  width: 100%;
+  height: 50px;
+  z-index: 3;
+  position: relative;
+}
+#controls label {
+  transition: opacity 0.2s ease-out;
+  display: none;
+  width: 50px;
+  height: 50px;
+  opacity: .4;
+}
+#controls label:hover {
+  opacity: 1;
+}
+
+#slide1:checked ~ #controls label:nth-child(2),
+#slide2:checked ~ #controls label:nth-child(3),
+#slide3:checked ~ #controls label:nth-child(4),
+#slide4:checked ~ #controls label:nth-child(5),
+#slide5:checked ~ #controls label:nth-child(1)
+{
+  background: url(https://image.flaticon.com/icons/svg/130/130884.svg) no-repeat;
+  float: right;
+  margin: 0 -50px 0 0;
+  display: block;
+}
+#slide1:checked ~ #controls label:nth-child(5),
+#slide2:checked ~ #controls label:nth-child(1),
+#slide3:checked ~ #controls label:nth-child(2),
+#slide4:checked ~ #controls label:nth-child(3),
+#slide5:checked ~ #controls label:nth-child(4)
+{
+  background: url(https://image.flaticon.com/icons/svg/130/130882.svg) no-repeat;
+  float: left;
+  margin: 0 0 0 -50px;
+  display: block;
+}
+
+#bullets {
+  margin: 150px 0 0;
+  text-align: center;
+}
+#bullets label {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background: #c2c2c2;
+  margin: 0 10px;
+}
+
+#slide1:checked ~ #bullets label:nth-child(1),
+#slide2:checked ~ #bullets label:nth-child(2),
+#slide3:checked ~ #bullets label:nth-child(3),
+#slide4:checked ~ #bullets label:nth-child(4),
+#slide5:checked ~ #bullets label:nth-child(5)
+{
+  background: #ff8800;
+}
+
+.login-wrapper{
+    width: 400px;
+    height: 350px;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.login-wrapper > h2{
+    font-size: 24px;
+    color: #6A24FE;
+    margin-bottom: 20px;
+}
+#login-form > input{
+    width: 100%;
+    height: 48px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+    border-radius: 6px;
+    background-color: #F8F8F8;
+}
+#login-form > input::placeholder{
+    color: #D2D2D2;
+}
+#login-form > input[type="submit"]{
+    color: #fff;
+    font-size: 16px;
+    background-color: #6A24FE;
+    margin-top: 20px;
+}
+
+#login_form > input[type="checkbox"]{
+    display: none;
+}
+#login-form > label{
+    color: #999999;
+}
+#login-form input[type="checkbox"] + label{
+    cursor: pointer;
+    padding-left: 26px;
+    background-image: url("checkbox.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+#login-form input[type="checkbox"]:checked + label{
+    background-image: url("checkbox-active.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+
+
+
+
+
+
+
+
+
+

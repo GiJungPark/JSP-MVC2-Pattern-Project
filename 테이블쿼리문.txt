@@ -1,0 +1,19 @@
+CREATE DATABASE `jspdb` /*!40100 DEFAULT CHARACTER SET utf8mb3 */ /*!80016 DEFAULT ENCRYPTION='N' */;
+
+use jspdb;
+
+CREATE TABLE `memberTbl` (
+  `memberid` varchar(50) NOT NULL,
+  `password` varchar(60) NOT NULL,
+  `name` varchar(10) DEFAULT NULL,
+  `gender` varchar(10) DEFAULT NULL,
+  `phone` varchar(10) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`memberid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+----------------------------------------------------
+
+jdbc:mysql://localhost:3306/jspdb?serverTimezone=UTC&useSSL=false&useUnicode=true&characterEncoding=utf-8"
+
